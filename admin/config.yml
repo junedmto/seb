@@ -1,0 +1,185 @@
+# =========================================================
+# Sveltia CMS settings for the Seb Porral site
+# Admin lives at  …/seb/admin/  — sign in with "Sign In with Token".
+# When the site moves to Seb's GitHub account, change `repo` below
+# (and `site_url` once he has his own domain).
+# =========================================================
+
+backend:
+  name: github
+  repo: junedmto/seb        # <github-account>/<repo-name>
+  branch: main
+
+site_url: https://junedmto.github.io/seb
+display_url: https://junedmto.github.io/seb
+
+# Where uploaded images are saved in the repo, and the path written into the content
+media_folder: images/uploads
+public_folder: /images/uploads
+
+# Every uploaded photo is converted to WebP and scaled down to max 2400px,
+# which keeps the site fast and well under GitHub's 1 GB limit.
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000   # ~30 MB per original upload
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2400
+          height: 2400
+
+# Turns project titles into clean web addresses: "Golden Hour" -> golden-hour
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+
+  # ---------- PROJECTS: one file per project in content/projects ----------
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: >
+      Each project has its own page. After creating a project, add it to
+      "Site → Homepage" so it appears on the homepage (and drag to set the order).
+    folder: content/projects
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: title
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: [title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: youtube
+        label: YouTube video link
+        widget: string
+        hint: Paste the normal YouTube link, e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX
+        required: false
+      - name: cover
+        label: Cover image (shown on the homepage)
+        widget: image
+      - name: description
+        label: Description
+        widget: markdown
+        buttons: [bold, italic, link]
+        editor_components: []
+        modes: [rich_text]
+        required: false
+      - name: per_row
+        label: Gallery — images per row
+        widget: number
+        value_type: int
+        min: 1
+        max: 8
+        default: 3
+      - name: gallery
+        label: Gallery photos
+        widget: image
+        multiple: true
+        required: false
+        hint: You can select or drop many photos at once.
+
+  # ---------- SITE: single pages and settings ----------
+  - name: site
+    label: Site
+    files:
+
+      - name: home
+        label: Homepage (project order)
+        file: content/home.json
+        format: json
+        fields:
+          - name: per_row
+            label: Images per row
+            widget: number
+            value_type: int
+            min: 1
+            max: 6
+            default: 2
+          - name: projects
+            label: Projects on the homepage
+            label_singular: project
+            hint: Drag to reorder. Add new projects here so they show on the site.
+            widget: list
+            collapsed: false
+            fields:
+              - name: project
+                label: Project
+                widget: relation
+                collection: projects
+                value_field: "{{slug}}"
+                search_fields: [title]
+                display_fields: [title]
+
+      - name: photography
+        label: Photography
+        file: content/photography.json
+        format: json
+        fields:
+          - name: per_row
+            label: Images per row
+            widget: number
+            value_type: int
+            min: 1
+            max: 8
+            default: 4
+          - name: images
+            label: Photos
+            widget: image
+            multiple: true
+            hint: You can select or drop many photos at once.
+
+      - name: about
+        label: About page
+        file: content/about.json
+        format: json
+        fields:
+          - { name: image, label: Top photo (full width), widget: image, required: false }
+          - name: bio
+            label: Bio
+            widget: markdown
+            buttons: [bold, italic, link]
+            editor_components: []
+            modes: [rich_text]
+          - name: columns
+            label: Side columns
+            label_singular: column
+            hint: e.g. Services, Selected clients, Gear. Drag to reorder.
+            widget: list
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - name: text
+                label: Text (one item per line)
+                widget: markdown
+                buttons: [bold, italic, link]
+                editor_components: []
+                modes: [rich_text]
+
+      - name: contact
+        label: Contact page
+        file: content/contact.json
+        format: json
+        fields:
+          - { name: intro, label: Intro line, widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: phone, label: Phone, widget: string, required: false }
+          - { name: location, label: Location, widget: string, required: false }
+          - { name: image, label: Bottom photo (full width), widget: image, required: false }
+
+      - name: settings
+        label: Site settings
+        file: content/settings.json
+        format: json
+        fields:
+          - { name: site_title, label: Name (top left), widget: string }
+          - { name: tagline, label: Tagline (next to the name), widget: string, required: false }
+          - { name: seo_description, label: Description for Google, widget: text, required: false }
+          - { name: share_image, label: Image shown when the link is shared, widget: image, required: false }
+          - { name: instagram, label: Instagram link, widget: string, required: false }
+          - { name: youtube, label: YouTube link, widget: string, required: false }
+          - { name: linkedin, label: LinkedIn link, widget: string, required: false }

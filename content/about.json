@@ -1,0 +1,18 @@
+{
+  "image": "/images/uploads/about-hero.jpg",
+  "bio": "Placeholder bio. Seb Porral is an end-to-end content producer working across film and photography — from concept and planning to shooting, editing, colour and delivery.\n\nBased in Spain, working worldwide.",
+  "columns": [
+    {
+      "heading": "Services",
+      "text": "Brand films\n\nCommercials\n\nReal estate\n\nMusic videos\n\nPhotography"
+    },
+    {
+      "heading": "Selected clients",
+      "text": "Client one\n\nClient two\n\nClient three\n\nClient four"
+    },
+    {
+      "heading": "Gear",
+      "text": "Cinema camera\n\nDrone\n\nGimbal\n\nLighting kit"
+    }
+  ]
+}
