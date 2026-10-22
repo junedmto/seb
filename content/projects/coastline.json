@@ -1,18 +1,13 @@
 {
-  "title": "Coastline",
-  "youtube": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
-  "cover": "/images/uploads/cover-1.jpg",
-  "description": "Placeholder description. A short paragraph about the project: who it was for, what the brief was, and how it was shot and produced.\n\n**Client:** Client name  \n**Role:** Direction, camera, edit, colour",
-  "per_row": 3,
+  "title": "Peru | James Carew",
+  "youtube": "https://www.youtube.com/watch?v=mR2B3kiRFJs&t=1s",
+  "cover": "/images/uploads/Screenshot 2026-10-22 at 09.51.32.webp",
+  "description": "For this project, I worked with world champion kitesurfer James Carew in search of some of the longest left-hand waves in the world, which led us to Pacasmayo, Peru.\n\nThe waves here can run for over a kilometre, creating a unique and extremely challenging environment to film in. I experimented with a range of approaches, from drone and long-lens shooting to in-water filming, but strong currents made water-based work almost impossible. The solution was to move onto a jet ski.\n\nPositioned in front of the wave, I was able to shoot backwards, head-on, with James carving powerfully up and down the face behind me. This setup allowed us to capture dynamic, high-speed sequences and some of the strongest kitesurfing footage from the trip. Pacasmayo truly lives up to its reputation as home to some of the longest waves in the world.\n\n**Client:** James Carew  \n**Role:** Direction, camera, edit, colour",
+  "per_row": 2,
   "gallery": [
-    "/images/uploads/placeholder-01.jpg",
-    "/images/uploads/placeholder-02.jpg",
-    "/images/uploads/placeholder-03.jpg",
-    "/images/uploads/placeholder-04.jpg",
-    "/images/uploads/placeholder-05.jpg",
-    "/images/uploads/placeholder-06.jpg",
-    "/images/uploads/placeholder-07.jpg",
-    "/images/uploads/placeholder-08.jpg",
-    "/images/uploads/placeholder-09.jpg"
+    "/images/uploads/Pink Poppy Flowers.webp",
+    "/images/uploads/Pink Poppy Flowers-3.webp",
+    "/images/uploads/Pink Poppy Flowers-2.webp",
+    "/images/uploads/Pink Poppy Flowers-1.webp"
   ]
 }
