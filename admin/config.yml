@@ -159,6 +159,38 @@ collections:
                 buttons: [bold, italic, link]
                 editor_components: []
                 modes: [rich_text]
+          - { name: sponsors_heading, label: Sponsors — heading, widget: string, default: Sponsors, required: false }
+          - name: sponsors_per_row
+            label: Sponsors — logos per row
+            widget: number
+            value_type: int
+            min: 1
+            max: 8
+            default: 5
+          - name: sponsors
+            label: Sponsor logos
+            widget: image
+            multiple: true
+            required: false
+            hint: Use PNG or SVG logos with transparent backgrounds. You can select many at once.
+          - { name: references_heading, label: References — heading, widget: string, default: Client references, required: false }
+          - name: references
+            label: Client references
+            label_singular: reference
+            hint: Add, remove or drag to reorder.
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { name: image, label: Image, widget: image, required: false }
+              - name: text
+                label: Reference text
+                widget: markdown
+                buttons: [bold, italic, link]
+                editor_components: []
+                modes: [rich_text]
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Title / company, widget: string, required: false }
 
       - name: contact
         label: Contact page

@@ -14,5 +14,45 @@
       "heading": "Gear",
       "text": "Cinema camera\n\nDrone\n\nGimbal\n\nLighting kit"
     }
+  ],
+  "sponsors_heading": "Sponsors",
+  "sponsors_per_row": 5,
+  "sponsors": [
+    "/images/uploads/logo-01.png",
+    "/images/uploads/logo-02.png",
+    "/images/uploads/logo-03.png",
+    "/images/uploads/logo-04.png",
+    "/images/uploads/logo-05.png",
+    "/images/uploads/logo-06.png",
+    "/images/uploads/logo-07.png",
+    "/images/uploads/logo-08.png",
+    "/images/uploads/logo-09.png"
+  ],
+  "references_heading": "Client references",
+  "references": [
+    {
+      "image": "/images/uploads/reference-1.jpg",
+      "text": "Placeholder reference. A few sentences from the client about working with Seb — the process, the result, and why they'd recommend him.",
+      "name": "Name Surname",
+      "role": "Marketing Director, Company"
+    },
+    {
+      "image": "/images/uploads/reference-2.jpg",
+      "text": "Placeholder reference. A few sentences from the client about working with Seb — the process, the result, and why they'd recommend him.",
+      "name": "Name Surname",
+      "role": "Founder, Brand"
+    },
+    {
+      "image": "/images/uploads/reference-3.jpg",
+      "text": "Placeholder reference. A few sentences from the client about working with Seb — the process, the result, and why they'd recommend him.",
+      "name": "Name Surname",
+      "role": "Head of Content, Agency"
+    },
+    {
+      "image": "/images/uploads/reference-4.jpg",
+      "text": "Placeholder reference. A few sentences from the client about working with Seb — the process, the result, and why they'd recommend him.",
+      "name": "Name Surname",
+      "role": "Team Manager, Sponsor"
+    }
   ]
 }

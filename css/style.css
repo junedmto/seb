@@ -213,6 +213,39 @@ body.menu-open .menu-btn span:nth-child(3) { transform: translateY(-6.5px) rotat
 }
 .about-col p { margin: 0 0 4px; }
 
+/* Sponsors + references sit under the bio, each with a thin line above */
+.about-section { border-top: 1px solid var(--line); padding: 28px var(--pad) 96px; }
+.section-label { margin-bottom: 8px; }
+
+/* Sponsor logos: equal cells, logos centred and scaled to fit.
+   --per-row comes from the admin. A shorter last row is centred. */
+.logo-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+.logo-cell {
+  flex: 0 0 calc(100% / var(--per-row));
+  height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 28px;
+}
+.logo-cell img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Client references: two per row on wide screens, one on smaller ones */
+.references {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  row-gap: 64px;
+  padding-top: 32px;
+}
+.reference { display: grid; grid-template-columns: 160px 1fr; gap: 28px; align-items: start; }
+.reference-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.reference-text { font-size: 18px; line-height: 1.5; margin-bottom: 20px; }
+.reference-name { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 13px; margin: 0; }
+.reference-role { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
+
 /* ---------- 8. Contact page ---------- */
 .contact { padding: 72px var(--pad) 96px; }
 .contact-intro { font-size: clamp(20px, 2vw, 28px); font-weight: 500; margin-bottom: 20px; }
@@ -277,6 +310,14 @@ body.no-scroll { overflow: hidden; }
 @media (max-width: 1100px) {
   .about-grid { grid-template-columns: 1fr 1fr 1fr; }
   .about-bio { grid-column: 1 / -1; }
+  .references { grid-template-columns: 1fr; }
+  .logo-cell { flex-basis: calc(100% / min(var(--per-row), 4)); height: 170px; }
+}
+@media (max-width: 700px) {
+  .logo-cell { flex-basis: 50%; height: 120px; padding: 24px 20px; }
+  .reference { grid-template-columns: 96px 1fr; gap: 18px; }
+  .reference-text { font-size: 16px; }
+  .about-section { padding-bottom: 64px; }
 }
 @media (max-width: 900px) {
   :root { --pad: 18px; --header-h: 72px; }
